@@ -15,4 +15,4 @@ The Motivation Plus Application delivers daily inspiration through push notifica
 - Frontend: Flutter
 - Backend: Firebase
 
-- For a detailed project proposal, please refer to [Project Proposal Document](docs/motivation-plus-project-proposal).
+- For a detailed project proposal, please refer to [Project Proposal Document](docs/motivation-plus-project-proposal.pdf).
