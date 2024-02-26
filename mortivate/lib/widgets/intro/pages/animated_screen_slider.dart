@@ -1,4 +1,5 @@
-import '../constants/constants.dart';
+import 'package:mortivate/utilities/constants.dart';
+
 import '../widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

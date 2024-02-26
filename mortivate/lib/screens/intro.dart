@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/screens/constants/constants.dart';
-import 'pages/animated_screen_slider.dart';
-import 'widgets/widgets.dart';
+import 'package:mortivate/utilities/constants.dart';
+import '../widgets/intro/pages/animated_screen_slider.dart';
+import '../widgets/intro/widgets/widgets.dart';
 
 final List<SingleIntroScreen> pages = [
   const SingleIntroScreen(
-    title: 'Welcome to the Motivation Plus !',
-    description:
-        'You plans your Events, We\'ll do the rest and will be the best! Guaranteed!  ',
+    title: 'Welcome to the \nMotivation Plus!',
+    description: 'Your daily source of inspiration and mental \nwell-being.',
     imageAsset: 'assets/meditate.png',
     mainCircleBgColor: Color.fromARGB(255, 10, 53, 88),
   ),
   const SingleIntroScreen(
-    title: 'Book tickets to cricket matches and events',
+    title: 'Discover Positivity!',
     description:
-        'Tickets to the latest movies, crickets matches, concerts, comedy shows, plus lots more !',
+        'Explore a world of motivational quotes and uplifting content.',
     imageAsset: 'assets/yoga1.png',
     mainCircleBgColor: Color.fromARGB(255, 11, 52, 86),
   ),
   const SingleIntroScreen(
-    title: 'Grabs all events now only in your hands',
-    description: 'All events are now in your hands, just a click away ! ',
+    title: 'Nurture Your Mind!',
+    description: 'Take a step towards mental health and self-care.',
     imageAsset: 'assets/yoga2.png',
     mainCircleBgColor: Color.fromARGB(255, 11, 52, 86),
   ),
@@ -36,7 +35,7 @@ class IntroScreen extends StatelessWidget {
         slides: pages,
         indicatorType: IndicatorType.circle,
         onDone: () {
-          /// TODO: Go to desire page like login or home
+          /// TODO: Navigate to desired page, such as login or home
         },
       ),
     );

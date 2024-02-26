@@ -83,7 +83,8 @@ class SingleIntroScreen extends StatelessWidget {
           Container(
             height: screenSize.height * .8,
             padding: slidePagePadding,
-            decoration: BoxDecoration(color: Color.fromARGB(255, 0, 0, 0)),
+            decoration:
+                const BoxDecoration(color: Color.fromARGB(255, 0, 0, 0)),
             child: Center(
               child: imageAsset != null || imageNetwork != null
                   ? imageWithBubble
