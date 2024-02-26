@@ -1,5 +1,7 @@
-import 'package:animated_introduction/animated_introduction.dart';
 import 'package:flutter/material.dart';
+import 'package:mortivate/screens/constants/constants.dart';
+import 'pages/animated_screen_slider.dart';
+import 'widgets/widgets.dart';
 
 final List<SingleIntroScreen> pages = [
   const SingleIntroScreen(
@@ -8,26 +10,18 @@ final List<SingleIntroScreen> pages = [
         'You plans your Events, We\'ll do the rest and will be the best! Guaranteed!  ',
     imageAsset: 'assets/meditate.png',
     mainCircleBgColor: Color.fromARGB(255, 10, 53, 88),
-    headerWidget: Text(
-      'Mortivate',
-      style: TextStyle(
-        color: Color.fromARGB(255, 0, 0, 0),
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
   ),
   const SingleIntroScreen(
     title: 'Book tickets to cricket matches and events',
     description:
         'Tickets to the latest movies, crickets matches, concerts, comedy shows, plus lots more !',
-    imageAsset: 'assets/room1.png',
+    imageAsset: 'assets/yoga1.png',
     mainCircleBgColor: Color.fromARGB(255, 11, 52, 86),
   ),
   const SingleIntroScreen(
     title: 'Grabs all events now only in your hands',
     description: 'All events are now in your hands, just a click away ! ',
-    imageAsset: 'assets/room2.png',
+    imageAsset: 'assets/yoga2.png',
     mainCircleBgColor: Color.fromARGB(255, 11, 52, 86),
   ),
 ];
