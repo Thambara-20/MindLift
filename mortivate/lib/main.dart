@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mortivate/screens/intro.dart';
 import 'package:mortivate/widgets/next_button.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const IntroScreen(),
     );
   }
 }
