@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mortivate/screens/personal.dart';
 import 'package:mortivate/utilities/constants.dart';
 import '../widgets/intro/pages/animated_screen_slider.dart';
 import '../widgets/intro/widgets/widgets.dart';
@@ -35,7 +36,12 @@ class IntroScreen extends StatelessWidget {
         slides: pages,
         indicatorType: IndicatorType.circle,
         onDone: () {
-          /// TODO: Navigate to desired page, such as login or home
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Personal(),
+            ),
+          );
         },
       ),
     );

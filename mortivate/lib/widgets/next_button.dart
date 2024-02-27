@@ -24,7 +24,7 @@ class StyledElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
+    final borderRadius = this.borderRadius ?? BorderRadius.circular(30);
     return Container(
       width: width,
       height: height,
@@ -34,14 +34,15 @@ class StyledElevatedButton extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: kPrimaryColor, width: 1.0),
+          border: Border.all(
+              color: const Color.fromARGB(255, 255, 255, 255), width: 0.1),
           borderRadius: borderRadius,
         ),
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
+            shadowColor: const Color.fromARGB(255, 0, 0, 0),
             shape: RoundedRectangleBorder(borderRadius: borderRadius),
           ),
           child: child,
