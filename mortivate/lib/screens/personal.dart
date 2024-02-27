@@ -69,7 +69,8 @@ class _MyPageSliderState extends State<Personal> {
                         } else {}
                       },
                       child: const Text('Next',
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(
+                              color: Color.fromARGB(200, 255, 255, 255))),
                     ),
                   ),
                 ],
@@ -77,9 +78,22 @@ class _MyPageSliderState extends State<Personal> {
             ),
           ),
         ),
-        Positioned(top:10,
-        left:8,
-        //backbutton
+        Positioned(
+          child: IconButton(
+            onPressed: () {
+              if (pageIndex > 1) {
+                _pageController.previousPage(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+                setState(() {
+                  pageIndex -= 1;
+                });
+              }
+            },
+            icon: const Icon(Icons.arrow_back_ios_new,
+                color: Color.fromARGB(208, 255, 255, 255)),
+          ),
         ),
         Positioned(
             top: 10,
@@ -89,7 +103,7 @@ class _MyPageSliderState extends State<Personal> {
               currentStep: pageIndex,
             )),
         Positioned(
-          right: 16,
+          right: 8,
           child: TextButton(
             onPressed: () {
               _pageController.nextPage(
@@ -102,7 +116,7 @@ class _MyPageSliderState extends State<Personal> {
             },
             child: const Text(
               'Skip',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color.fromARGB(205, 255, 255, 255)),
             ),
           ),
         )
