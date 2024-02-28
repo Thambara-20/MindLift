@@ -31,10 +31,21 @@ class NamePage extends StatelessWidget {
             TextField(
               controller: _nameController,
               style: const TextStyle(color: Colors.white),
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Your Name or Nickname',
-                hintStyle: TextStyle(color: Colors.white70),
-                border: OutlineInputBorder(),
+                hintStyle: const TextStyle(color: Colors.white70),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.green),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: Color.fromARGB(255, 83, 83, 83)),
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
             ),
           ],

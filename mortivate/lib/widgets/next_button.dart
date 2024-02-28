@@ -17,7 +17,7 @@ class StyledElevatedButton extends StatelessWidget {
     required this.child,
     this.borderRadius,
     this.width,
-    this.height = 44.0,
+    this.height = 55.0,
     this.gradient =
         const LinearGradient(colors: [kPrimaryColor, kSecondaryColor]),
   }) : super(key: key);
@@ -34,8 +34,16 @@ class StyledElevatedButton extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-              color: const Color.fromARGB(255, 255, 255, 255), width: 0.1),
+          border:
+              Border.all(color: const Color.fromARGB(212, 0, 0, 0), width: 0.5),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 2,
+              offset: const Offset(0, 1),
+            ),
+          ],
           borderRadius: borderRadius,
         ),
         child: ElevatedButton(

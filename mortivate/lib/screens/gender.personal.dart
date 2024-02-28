@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mortivate/widgets/radio_button.dart';
 
 class GenderPage extends StatefulWidget {
-  GenderPage({Key? key}) : super(key: key);
+  const GenderPage({Key? key}) : super(key: key);
 
   @override
   _GenderPageState createState() => _GenderPageState();

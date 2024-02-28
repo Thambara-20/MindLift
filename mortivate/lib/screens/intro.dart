@@ -28,21 +28,24 @@ final List<SingleIntroScreen> pages = [
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
+  static const String routeName = '/intro_screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedIntroduction(
-        slides: pages,
-        indicatorType: IndicatorType.circle,
-        onDone: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const Personal(),
-            ),
-          );
-        },
+      body: SafeArea(
+        child: AnimatedIntroduction(
+          slides: pages,
+          indicatorType: IndicatorType.circle,
+          onDone: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Personal(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mortivate/screens/intro.dart';
 import 'package:mortivate/widgets/next_button.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -11,19 +14,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Color.fromARGB(172, 0, 0, 0),
+        statusBarIconBrightness: Brightness.light,
+      ),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
-        useMaterial3: true,
-      ),
-      home: const IntroScreen(),
+      routes: {
+        IntroScreen.routeName: (context) => const IntroScreen(),
+        MyHomePage.routeName: (context) => const MyHomePage(),
+      },
+      initialRoute: IntroScreen.routeName,
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  static const String routeName = '/home';
+
   const MyHomePage({super.key});
 
   @override

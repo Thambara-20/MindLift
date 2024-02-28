@@ -17,12 +17,13 @@ class GenderRadioButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 2),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
         border: Border.all(
+          width: 0.5,
           color: groupValue == value
-              ? Color.fromARGB(76, 0, 0, 0)
-              : const Color.fromARGB(167, 41, 114, 140),
+              ? Color.fromARGB(188, 8, 20, 97)
+              : Color.fromARGB(131, 7, 136, 33),
         ),
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
@@ -34,8 +35,8 @@ class GenderRadioButton extends StatelessWidget {
           ),
         ],
         color: groupValue == value
-            ? Color.fromARGB(255, 6, 42, 87)
-            : Color.fromARGB(167, 41, 114, 140),
+            ? const Color.fromARGB(92, 3, 19, 39)
+            : const Color.fromARGB(41, 66, 143, 194),
       ),
       child: RadioListTile(
         title: Text(label,
@@ -49,8 +50,7 @@ class GenderRadioButton extends StatelessWidget {
             if (states.contains(MaterialState.selected)) {
               return const Color.fromARGB(194, 255, 255, 255);
             }
-            return const Color.fromARGB(
-                255, 0, 26, 99); // Use the default value.
+            return const Color.fromARGB(255, 0, 26, 99);
           },
         ),
       ),
