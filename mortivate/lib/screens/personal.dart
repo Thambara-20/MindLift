@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mortivate/screens/gender.personal.dart';
 import 'package:mortivate/screens/name.personal.dart';
 import 'package:mortivate/widgets/next_button.dart';
 
@@ -16,7 +17,7 @@ class _MyPageSliderState extends State<Personal> {
   int pageIndex = 1;
   final List<Widget> _pages = [
     NamePage(),
-    NamePage(),
+    GenderPage(),
     NamePage(),
   ];
 
