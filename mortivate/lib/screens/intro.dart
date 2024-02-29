@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mortivate/screens/personal.dart';
 import 'package:mortivate/utilities/constants.dart';
 import '../widgets/intro/pages/animated_screen_slider.dart';
 import '../widgets/intro/widgets/widgets.dart';
@@ -27,16 +28,24 @@ final List<SingleIntroScreen> pages = [
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
+  static const String routeName = '/intro_screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedIntroduction(
-        slides: pages,
-        indicatorType: IndicatorType.circle,
-        onDone: () {
-          /// TODO: Navigate to desired page, such as login or home
-        },
+      body: SafeArea(
+        child: AnimatedIntroduction(
+          slides: pages,
+          indicatorType: IndicatorType.circle,
+          onDone: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Personal(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

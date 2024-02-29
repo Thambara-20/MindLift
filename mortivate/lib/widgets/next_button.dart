@@ -17,14 +17,14 @@ class StyledElevatedButton extends StatelessWidget {
     required this.child,
     this.borderRadius,
     this.width,
-    this.height = 44.0,
+    this.height = 55.0,
     this.gradient =
         const LinearGradient(colors: [kPrimaryColor, kSecondaryColor]),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
+    final borderRadius = this.borderRadius ?? BorderRadius.circular(30);
     return Container(
       width: width,
       height: height,
@@ -34,14 +34,23 @@ class StyledElevatedButton extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: kPrimaryColor, width: 1.0),
+          border:
+              Border.all(color: const Color.fromARGB(212, 0, 0, 0), width: 0.5),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 2,
+              offset: const Offset(0, 1),
+            ),
+          ],
           borderRadius: borderRadius,
         ),
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
+            shadowColor: const Color.fromARGB(255, 0, 0, 0),
             shape: RoundedRectangleBorder(borderRadius: borderRadius),
           ),
           child: child,

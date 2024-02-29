@@ -112,7 +112,7 @@ class AnimatedIntroduction extends StatefulWidget {
     this.inactiveDotColor,
     this.skipText = 'Skip',
     this.nextText = 'Next',
-    this.doneText = 'Login Now',
+    this.doneText = 'Start',
     this.viewPortFraction = 1.0,
     this.textColor = Colors.white,
     this.footerPadding = const EdgeInsets.all(24),
