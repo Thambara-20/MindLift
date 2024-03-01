@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/screens/menu.dart';
+import 'package:mortivate/widgets/brain_fusion.dart';
 import 'package:mortivate/widgets/next_button.dart';
 import 'package:mortivate/widgets/quote_container.dart';
 
@@ -60,7 +60,10 @@ class _HomeState extends State<Home> {
                         padding: const EdgeInsets.all(8.0),
                         child: StyledElevatedButton(
                           onPressed: () {
-                            Menu.show(context);
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Test(title: 'Brain Fusion');
+                            }));
                           },
                           height: 40,
                           child: const Text('Menu',
@@ -86,16 +89,18 @@ class MiddlePageList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.98,
-      child: PageView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: 4,
-        itemBuilder: (BuildContext context, int index) {
-          return QuoteContainer(
-            quote: 'Quote $index',
-            author: 'Author Name',
-          );
-        },
-      ),
+      child: Column(children: [
+        PageView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: 4,
+          itemBuilder: (BuildContext context, int index) {
+            return QuoteContainer(
+              quote: 'Quote $index',
+              author: 'Author Name',
+            );
+          },
+        ),
+      ]),
     );
   }
 }

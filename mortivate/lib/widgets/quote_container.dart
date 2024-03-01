@@ -16,7 +16,15 @@ class QuoteContainer extends StatelessWidget {
       margin: const EdgeInsets.all(6.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.0),
-        color: const Color.fromARGB(38, 238, 238, 238),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+
+            Color.fromARGB(141, 12, 154, 31),
+            Color.fromARGB(0, 52, 74, 185),
+          ],
+        ),
         boxShadow: [
           BoxShadow(
             color: const Color.fromARGB(255, 15, 15, 15).withOpacity(0.3),
