@@ -29,8 +29,8 @@ class MoodRadioButton extends StatelessWidget {
           border: Border.all(
             width: 0.5,
             color: groupValue == value
-                ? Color.fromARGB(188, 8, 20, 97)
-                : Color.fromARGB(131, 7, 136, 33),
+                ? const Color.fromARGB(188, 8, 20, 97)
+                : const Color.fromARGB(131, 7, 136, 33),
           ),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [

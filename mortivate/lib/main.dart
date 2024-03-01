@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mortivate/screens/home.dart';
 import 'package:mortivate/screens/intro.dart';
-import 'package:mortivate/widgets/next_button.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
