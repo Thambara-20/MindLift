@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<Uint8List> generateImg(String title) async {
   var headers = {
@@ -17,16 +18,24 @@ Future<Uint8List> generateImg(String title) async {
     'fallback_providers': '',
   };
   try {
-    print('Generating Image');
-    var response = await http.post(
-      url,
-      headers: headers,
-      body: jsonEncode(payload),
-    );
-    var result = json.decode(response.body);
-    print(result['openai']['items'][0]);
-    final bytes = base64.decode((result['openai']['items'][0])['image']);
-    return bytes;
+    // get image from cache
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey(title)) {
+      print('Getting Image from cache');
+      return base64.decode(prefs.getString(title)!);
+    } else {
+      print('Generating Image');
+      var response = await http.post(
+        url,
+        headers: headers,
+        body: jsonEncode(payload),
+      );
+      var result = json.decode(response.body);
+      print(result['openai']['items'][0]);
+      final bytes = base64.decode((result['openai']['items'][0])['image']);
+      prefs.setString(title, base64.encode(bytes));
+      return bytes;
+    }
   } catch (e) {
     print('Error from AI package: $e');
     return base64

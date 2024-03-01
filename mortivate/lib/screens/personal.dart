@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mortivate/screens/gender.personal.dart';
 import 'package:mortivate/screens/name.personal.dart';
 import 'package:mortivate/screens/situation.personal.dart';
-import 'package:mortivate/widgets/next_button.dart';
+import 'package:mortivate/widgets/styled_button.dart';
 
 import '../widgets/progress_indicator.dart';
 

@@ -1,7 +1,11 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:mortivate/widgets/brain_fusion.dart';
-import 'package:mortivate/widgets/next_button.dart';
+import 'package:mortivate/widgets/styled_button.dart';
 import 'package:mortivate/widgets/quote_container.dart';
+import 'package:mortivate/widgets/special_quote.dart';
 
 class Home extends StatefulWidget {
   static const String routeName = '/home';
@@ -57,15 +61,19 @@ class _HomeState extends State<Home> {
                       bottom: 0,
                       right: 0,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: StyledElevatedButton(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(10),
+                          ),
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
                               return const Test(title: 'Brain Fusion');
                             }));
                           },
-                          height: 40,
+                          height: 45,
                           child: const Text('Menu',
                               style: TextStyle(
                                   fontSize: 16,
@@ -89,18 +97,22 @@ class MiddlePageList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.98,
-      child: Column(children: [
-        PageView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: 4,
-          itemBuilder: (BuildContext context, int index) {
-            return QuoteContainer(
-              quote: 'Quote $index',
-              author: 'Author Name',
+      child: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: 4,
+        itemBuilder: (BuildContext context, int index) {
+          if (index == 0) {
+            return Specialquote(
+              backgroundImage: base64.decode(
+                  'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'),
+              quote: 'Quote of the day',
+              author: 'Author',
             );
-          },
-        ),
-      ]),
+          } else {
+            return QuoteContainer(quote: 'Quote ${index}', author: 'Author');
+          }
+        },
+      ),
     );
   }
 }

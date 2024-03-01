@@ -1,6 +1,5 @@
 /// Importing the 'dart:io' package to detect the platform, the 'brain_fusion' package for AI processing, the 'flutter/foundation.dart' package for debugging, and the 'flutter/material.dart' package for widget building.import 'dart:io' show Platform;
 import 'dart:io' show Platform;
-import 'package:brain_fusion/brain_fusion.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mortivate/utilities/index.dart';
@@ -54,7 +53,7 @@ class _TestState extends State<Test> {
                         builder: (context, snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return const CircularProgressIndicator();
+                            return const Center(child: CircularProgressIndicator());
                           } else if (snapshot.hasError) {
                             return Text('Error: ${snapshot.error}');
                           } else if (snapshot.hasData) {
