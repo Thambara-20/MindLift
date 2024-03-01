@@ -30,8 +30,8 @@ class _MyPageSliderState extends State<Personal> {
           Container(
             color: const Color.fromARGB(255, 0, 0, 0),
             child: Padding(
-              padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.07),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.07),
               child: Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -69,7 +69,9 @@ class _MyPageSliderState extends State<Personal> {
                             setState(() {
                               pageIndex += 1;
                             });
-                          } else {}
+                          } else {
+                            Navigator.pushNamed(context, '/home');
+                          }
                         },
                         child: const Text('Next',
                             style: TextStyle(
