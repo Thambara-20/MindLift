@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mortivate/screens/menu.dart';
 import 'package:mortivate/widgets/next_button.dart';
+import 'package:mortivate/widgets/quote_container.dart';
 
 class Home extends StatefulWidget {
   static const String routeName = '/home';
@@ -20,23 +21,22 @@ class _HomeState extends State<Home> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color.fromARGB(255, 18, 67, 165),
               Color.fromARGB(255, 5, 104, 12),
+              Color.fromARGB(255, 12, 41, 99),
             ],
           ),
         ),
         child: Column(
           children: [
-            const Text('Home'),
             Expanded(
               child: Stack(
                 children: [
                   Positioned(
                     // Component for middle screen daily quotes image container
-                    top: MediaQuery.of(context).size.height * 0.15,
+                    top: MediaQuery.of(context).size.height * 0.01,
                     left: 0,
                     right: 0,
-                    child: const MiddlePageComponent(),
+                    child: const MiddlePageList(),
                   ),
                   Positioned(
                     right: 4,
@@ -79,36 +79,22 @@ class _HomeState extends State<Home> {
   }
 }
 
-class MiddlePageComponent extends StatelessWidget {
-  const MiddlePageComponent({super.key});
+class MiddlePageList extends StatelessWidget {
+  const MiddlePageList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        // Replace with your widget for the daily quotes image container
-        height: MediaQuery.of(context).size.height * 0.65,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18.0),
-          color: const Color.fromARGB(
-              138, 255, 255, 255), // Replace with your color or decoration
-          image: const DecorationImage(
-            image:
-                AssetImage('assets/yoga1.png'), // Replace with your image path
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: const Text(
-            'Today Special',
-            style: TextStyle(
-              fontSize: 24,
-              color: Color.fromARGB(255, 0, 0, 0),
-            ),
-          ),
-        ),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.98,
+      child: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: 4,
+        itemBuilder: (BuildContext context, int index) {
+          return QuoteContainer(
+            quote: 'Quote $index',
+            author: 'Author Name',
+          );
+        },
       ),
     );
   }
