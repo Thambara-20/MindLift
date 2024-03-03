@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:mortivate/widgets/brain_fusion.dart';
@@ -102,14 +100,13 @@ class MiddlePageList extends StatelessWidget {
         itemCount: 4,
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
-            return Specialquote(
-              backgroundImage: base64.decode(
-                  'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'),
+            return const Specialquote(
+             
               quote: 'Quote of the day',
               author: 'Author',
             );
           } else {
-            return QuoteContainer(quote: 'Quote ${index}', author: 'Author');
+            return QuoteContainer(quote: 'Quote $index', author: 'Author');
           }
         },
       ),

@@ -37,8 +37,6 @@ Future<Uint8List> generateImg(String title) async {
       return bytes;
     }
   } catch (e) {
-    print('Error from AI package: $e');
-    return base64
-        .decode('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+    throw Error();
   }
 }

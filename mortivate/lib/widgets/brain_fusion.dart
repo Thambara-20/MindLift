@@ -14,7 +14,6 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-
   bool run = false;
 
   Future<Uint8List> _generate(String query) async {
@@ -53,7 +52,8 @@ class _TestState extends State<Test> {
                         builder: (context, snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return const Center(child: CircularProgressIndicator());
+                            return const Center(
+                                child: CircularProgressIndicator());
                           } else if (snapshot.hasError) {
                             return Text('Error: ${snapshot.error}');
                           } else if (snapshot.hasData) {

@@ -6,7 +6,6 @@ import 'package:mortivate/widgets/styled_button.dart';
 class Specialquote extends StatelessWidget {
   final String quote;
   final String author;
-  final Uint8List backgroundImage;
 
   Future<Uint8List> _generate(String query) async {
     Uint8List image = await generateImg(query);
@@ -17,7 +16,6 @@ class Specialquote extends StatelessWidget {
     Key? key,
     required this.quote,
     required this.author,
-    required this.backgroundImage,
   }) : super(key: key);
 
   @override
@@ -81,7 +79,7 @@ class Specialquote extends StatelessWidget {
                 child: StyledElevatedButton(
                   height: 40,
                   onPressed: () {
-                    print('object');
+                    // print('object');
                   },
                   child: const Icon(Icons.share,
                       size: 18, color: Color.fromARGB(255, 0, 0, 0)),
