@@ -79,7 +79,7 @@ class Specialquote extends StatelessWidget {
                 child: StyledElevatedButton(
                   height: 40,
                   onPressed: () {
-                    // print('object');
+                    print('object');
                   },
                   child: const Icon(Icons.share,
                       size: 18, color: Color.fromARGB(255, 0, 0, 0)),
@@ -112,17 +112,20 @@ class Specialquote extends StatelessWidget {
 class QuoteBodyContainer extends StatelessWidget {
   final String quote;
   final String author;
+  final String height;
 
   const QuoteBodyContainer({
     Key? key,
     required this.quote,
     required this.author,
+    this.height = '100',
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
+      height: height == '100' ? MediaQuery.of(context).size.height * 0.94 : 120,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.0),
         gradient: const LinearGradient(
@@ -145,12 +148,12 @@ class QuoteBodyContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(16.0),
+          Padding(
+            padding: EdgeInsets.all(height == '100' ? 16.0 : 12.0),
             child: Text(
               'Quote of the day',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: height == '100' ? 24 : 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -158,31 +161,35 @@ class QuoteBodyContainer extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Text(
-                      '"Quote of the day"',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
+              alignment: height == '100'
+                  ? Alignment.center
+                  : AlignmentDirectional.topCenter,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(height == '100' ? 16.0 : 2.0),
+                      child: Text(
+                        '"Quote of the day"',
+                        style: TextStyle(
+                          fontSize: height == '100' ? 24 : 16,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      author,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
+                    Padding(
+                      padding: EdgeInsets.all(height == '100' ? 16.0 : 2.0),
+                      child: Text(
+                        author,
+                        style: TextStyle(
+                          fontSize: height == '100' ? 16 : 14,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
