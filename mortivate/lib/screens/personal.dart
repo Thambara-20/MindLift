@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mortivate/screens/gender.personal.dart';
 import 'package:mortivate/screens/name.personal.dart';
 import 'package:mortivate/screens/situation.personal.dart';
-import 'package:mortivate/widgets/next_button.dart';
+import 'package:mortivate/widgets/styled_button.dart';
 
 import '../widgets/progress_indicator.dart';
 
@@ -10,6 +10,7 @@ class Personal extends StatefulWidget {
   const Personal({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyPageSliderState createState() => _MyPageSliderState();
 }
 
@@ -30,8 +31,8 @@ class _MyPageSliderState extends State<Personal> {
           Container(
             color: const Color.fromARGB(255, 0, 0, 0),
             child: Padding(
-              padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.07),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.07),
               child: Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -69,7 +70,9 @@ class _MyPageSliderState extends State<Personal> {
                             setState(() {
                               pageIndex += 1;
                             });
-                          } else {}
+                          } else {
+                            Navigator.pushNamed(context, '/home');
+                          }
                         },
                         child: const Text('Next',
                             style: TextStyle(
