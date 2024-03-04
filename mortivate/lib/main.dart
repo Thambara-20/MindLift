@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mortivate/screens/home.dart';
 import 'package:mortivate/screens/intro.dart';
+import 'package:mortivate/widgets/notification.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -9,6 +10,8 @@ void main() async {
 
   try {
     final prefs = await SharedPreferences.getInstance();
+    await initNotifications();
+
     runApp(MyApp(prefs: prefs));
   } catch (e) {}
 }
