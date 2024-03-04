@@ -4,6 +4,7 @@ import 'package:mortivate/screens/home.dart';
 import 'package:mortivate/screens/intro.dart';
 import 'package:mortivate/widgets/notification.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +16,13 @@ void main() async {
     await showNotification();
     runApp(MyApp(prefs: prefs));
   } catch (e) {}
+}
+
+void onStart() {
+  WidgetsFlutterBinding.ensureInitialized();
+  final service = FlutterBackgroundService();
+  service.startService();
+  
 }
 
 class MyApp extends StatelessWidget {
