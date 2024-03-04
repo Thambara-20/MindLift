@@ -1,5 +1,3 @@
-// background notification service for the app
-import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -7,23 +5,21 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 
 Future<void> initNotifications() async {
   const AndroidInitializationSettings androidInitializationSettings =
-      AndroidInitializationSettings('app_icon');
+      AndroidInitializationSettings('@mipmap/ic_launcher');
 
-  const InitializationSettings initializationSettings = InitializationSettings(
+  final InitializationSettings initializationSettings = InitializationSettings(
     android: androidInitializationSettings,
   );
+
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+}
 
-  const AndroidNotificationDetails androidNotificationDetails =
-      AndroidNotificationDetails(
-    'birthday_channel_id',
-    'Birthday Channel',
-    importance: Importance.high,
-  );
-
-  const NotificationDetails notificationDetails = NotificationDetails(
-    android: androidNotificationDetails,
-  );
+Future<void> showNotification() async {
+  const AndroidNotificationDetails androidPlatformChannelSpecifics =
+      AndroidNotificationDetails('your channel id', 'your channel name',
+          importance: Importance.max, priority: Priority.high, showWhen: false);
+  const NotificationDetails platformChannelSpecifics =
+      NotificationDetails(android: androidPlatformChannelSpecifics);
   await flutterLocalNotificationsPlugin.show(
-      1, 'title', 'body', notificationDetails);
+      0, 'Test Title', 'Test Body', platformChannelSpecifics);
 }

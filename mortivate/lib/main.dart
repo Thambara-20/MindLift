@@ -12,6 +12,7 @@ void main() async {
     final prefs = await SharedPreferences.getInstance();
     await initNotifications();
 
+    await showNotification();
     runApp(MyApp(prefs: prefs));
   } catch (e) {}
 }
