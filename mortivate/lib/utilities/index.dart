@@ -21,10 +21,8 @@ Future<Uint8List> generateImg(String title) async {
     // get image from cache
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (prefs.containsKey(title)) {
-      print('Getting Image from cache');
       return base64.decode(prefs.getString(title)!);
     } else {
-      print('Generating Image');
       var response = await http.post(
         url,
         headers: headers,
