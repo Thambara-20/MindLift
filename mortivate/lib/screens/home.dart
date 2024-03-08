@@ -45,8 +45,7 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.all(5.0),
-                          backgroundColor:
-                              Color.fromARGB(255, 50, 69, 53),
+                          backgroundColor: const Color.fromARGB(255, 50, 69, 53),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),

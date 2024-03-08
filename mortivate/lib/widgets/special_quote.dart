@@ -150,11 +150,10 @@ class QuoteBodyContainer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(height == '100' ? 16.0 : 12.0),
             child: Container(
-              width: MediaQuery.of(context).size.width ,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 backgroundBlendMode: BlendMode.lighten,
-                
                 gradient: const LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
