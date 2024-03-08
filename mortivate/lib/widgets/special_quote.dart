@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:mortivate/utilities/index.dart';
+import 'package:mortivate/widgets/gradient_text.dart';
 import 'package:mortivate/widgets/styled_button.dart';
 
 class Specialquote extends StatelessWidget {
@@ -26,20 +27,20 @@ class Specialquote extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Stack(children: [
             Positioned(
-              bottom: 10,
-              left: 10,
+              bottom: 15,
+              left: 15,
               child: StyledElevatedButton(
                 height: 40,
                 onPressed: () {
                   Navigator.of(context).pushNamed('/home');
                 },
                 child: const Icon(Icons.share,
-                    size: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                    size: 18, color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ),
             Positioned(
-              left: 80,
-              bottom: 10,
+              left: 85,
+              bottom: 15,
               child: StyledElevatedButton(
                 height: 40,
                 borderRadius: BorderRadius.circular(20),
@@ -47,7 +48,7 @@ class Specialquote extends StatelessWidget {
                   Navigator.of(context).pushNamed('/home');
                 },
                 child: const Icon(Icons.download,
-                    size: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                    size: 18, color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ),
             const QuoteBodyContainer(quote: 'quote', author: 'Author')
@@ -74,20 +75,20 @@ class Specialquote extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 10,
-                left: 10,
+                bottom: 15,
+                left: 15,
                 child: StyledElevatedButton(
                   height: 40,
                   onPressed: () {
                     print('object');
                   },
                   child: const Icon(Icons.share,
-                      size: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                      size: 18, color: Color.fromARGB(255, 255, 255, 255)),
                 ),
               ),
               Positioned(
-                left: 80,
-                bottom: 10,
+                left: 85,
+                bottom: 15,
                 child: StyledElevatedButton(
                   height: 40,
                   borderRadius: BorderRadius.circular(20),
@@ -95,7 +96,7 @@ class Specialquote extends StatelessWidget {
                     Navigator.of(context).pushNamed('/home');
                   },
                   child: const Icon(Icons.download,
-                      size: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                      size: 18, color: Color.fromARGB(255, 255, 255, 255)),
                 ),
               ),
               const QuoteBodyContainer(quote: 'quote', author: 'Author')
@@ -124,15 +125,13 @@ class QuoteBodyContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
-      height: height == '100' ? MediaQuery.of(context).size.height * 0.94 : 120,
+      height: height == '100' ? MediaQuery.of(context).size.height * 0.95 : 120,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.0),
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color.fromARGB(141, 12, 154, 31),
+            Color.fromARGB(84, 9, 71, 92),
             Color.fromARGB(0, 52, 74, 185),
           ],
         ),
@@ -150,12 +149,42 @@ class QuoteBodyContainer extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.all(height == '100' ? 16.0 : 12.0),
-            child: Text(
-              'Quote of the day',
-              style: TextStyle(
-                fontSize: height == '100' ? 24 : 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+            child: Container(
+              width: MediaQuery.of(context).size.width ,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                backgroundBlendMode: BlendMode.lighten,
+                
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(183, 255, 255, 255),
+                    Color.fromARGB(170, 211, 211, 211),
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 8.0,
+                  top: 2.0,
+                  bottom: 2.0,
+                ),
+                child: GradientText(
+                    text: 'Quote of the day',
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromARGB(255, 0, 39, 110),
+                        Color.fromARGB(255, 3, 111, 30),
+                      ],
+                    ),
+                    type: Type.text,
+                    style: TextStyle(
+                      fontSize: height == '100' ? 24 : 18,
+                      fontWeight: FontWeight.bold,
+                    )),
               ),
             ),
           ),
