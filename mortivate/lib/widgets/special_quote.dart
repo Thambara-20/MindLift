@@ -135,11 +135,12 @@ class QuoteBodyContainer extends StatelessWidget {
             Color.fromARGB(0, 52, 74, 185),
           ],
         ),
+        borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
             color: const Color.fromARGB(255, 15, 15, 15).withOpacity(0.3),
-            spreadRadius: 2,
-            blurRadius: 5,
+            spreadRadius: 1,
+            blurRadius: 1,
             offset: const Offset(0, 3),
           ),
         ],
