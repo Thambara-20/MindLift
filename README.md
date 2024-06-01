@@ -15,4 +15,4 @@ The MindLift delivers daily inspiration through push notifications, goal trackin
 - Frontend: Flutter
 - Backend: Firebase
 
-- For a detailed project proposal, please refer to [Project Proposal Document](docs/MindLift Project Proposal.pdf).
+- For a detailed project proposal, please refer to [Project Proposal Document](docs/MindLift_Project_Proposal.pdf).
