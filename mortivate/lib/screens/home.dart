@@ -42,14 +42,12 @@ class _HomeState extends State<Home> {
                     Positioned(
                       right: 4,
                       top: 0,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(5.0),
-                          backgroundColor: const Color.fromARGB(255, 50, 69, 53),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ),
+                      child: StyledElevatedButton(
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
                         ),
+                        height: 50,
+                        width: 60,
                         onPressed: () {},
                         child: const Icon(Icons.settings,
                             color: Color.fromARGB(255, 255, 255, 255)),

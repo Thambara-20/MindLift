@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:mortivate/widgets/menu_box_wrapper.dart';
 import 'package:mortivate/widgets/special_quote.dart';
+import 'package:mortivate/widgets/styled_button.dart';
 
 class Menu {
   static void show(BuildContext context) {
@@ -17,25 +19,96 @@ class Menu {
         ),
       ),
       builder: (BuildContext context) {
-        return _Content(context);
+        return Content(context);
       },
     );
   }
 
   // ignore: non_constant_identifier_names
-  static Widget _Content(BuildContext context) {
+  static Widget Content(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: const SingleChildScrollView(
-            child: Column(
-              children: [
-                QuoteBodyContainer(quote: 'quote', author: 'author', height: '50',),
-              ],
+      body: Stack(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 2, 39, 8),
+                  Color.fromARGB(255, 0, 29, 57),
+                ],
+              ),
             ),
-          )),
+            child: const SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: QuoteBodyContainer(
+                      quote: 'quote',
+                      author: 'author',
+                      height: '50',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  MenuBoxWrapper(topic: 'Main menu', menuItems: [
+                    'General',
+                    'My Quotes',
+                    'My Favorites',
+                    'Exercises plus'
+                  ], icons: [
+                    Icons.book,
+                    Icons.note,
+                    Icons.favorite,
+                    Icons.handshake
+                  ]),
+                  MenuBoxWrapper(topic: 'For Personal Growth', menuItems: [
+                    'Upgrade',
+                    'Boost your mind',
+                    'Level up',
+                    'Mortivation plus'
+                  ], icons: [
+                    Icons.arrow_outward,
+                    Icons.mediation,
+                    Icons.show_chart_outlined,
+                    Icons.medical_information
+                  ]),
+                  MenuBoxWrapper(topic: 'For Personal Growth', menuItems: [
+                    'Upgrade',
+                    'Boost your mind',
+                    'Level up',
+                    'Mortivation plus'
+                  ], icons: [
+                    Icons.arrow_outward,
+                    Icons.mediation,
+                    Icons.show_chart_outlined,
+                    Icons.medical_information
+                  ]),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0.0,
+            right: .0,
+            child: StyledElevatedButton(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+              ),
+              child: const Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -29,7 +29,6 @@ Future<Uint8List> generateImg(String title) async {
         body: jsonEncode(payload),
       );
       var result = json.decode(response.body);
-      print(result['openai']['items'][0]);
       final bytes = base64.decode((result['openai']['items'][0])['image']);
       prefs.setString(title, base64.encode(bytes));
       return bytes;
