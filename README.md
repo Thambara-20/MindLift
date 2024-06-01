@@ -1,4 +1,4 @@
-# Motivation Plus
+# MindLift
 
 ## Overview
 
