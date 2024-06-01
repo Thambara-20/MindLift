@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/screens/personal/gender.personal.dart';
-import 'package:mortivate/screens/personal/name.personal.dart';
-import 'package:mortivate/screens/personal/situation.personal.dart';
-import 'package:mortivate/widgets/styled_button.dart';
+import 'package:mindlift/screens/personal/gender.personal.dart';
+import 'package:mindlift/screens/personal/name.personal.dart';
+import 'package:mindlift/screens/personal/situation.personal.dart';
+import 'package:mindlift/widgets/styled_button.dart';
 
 import '../widgets/progress_indicator.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/screens/menu.dart';
-import 'package:mortivate/widgets/styled_button.dart';
-import 'package:mortivate/widgets/quote_container.dart';
-import 'package:mortivate/widgets/special_quote.dart';
+import 'package:mindlift/screens/menu.dart';
+import 'package:mindlift/widgets/styled_button.dart';
+import 'package:mindlift/widgets/quote_container.dart';
+import 'package:mindlift/widgets/special_quote.dart';
 
 class Home extends StatefulWidget {
   static const String routeName = '/home';

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:mortivate/utilities/constants.dart';
+import 'package:mindlift/utilities/constants.dart';
 
 class PageIndicator extends StatelessWidget {
   final int? currentIndex;

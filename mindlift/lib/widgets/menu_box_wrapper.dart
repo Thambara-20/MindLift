@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/widgets/gradient_text.dart';
-import 'package:mortivate/widgets/menu_box.dart';
+import 'package:mindlift/widgets/gradient_text.dart';
+import 'package:mindlift/widgets/menu_box.dart';
 
 class MenuBoxWrapper extends StatelessWidget {
   final String topic;

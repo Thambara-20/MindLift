@@ -1,4 +1,4 @@
-import 'package:mortivate/utilities/constants.dart';
+import 'package:mindlift/utilities/constants.dart';
 
 import '../widgets/widgets.dart';
 import 'package:flutter/material.dart';
