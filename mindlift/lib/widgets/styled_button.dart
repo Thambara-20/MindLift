@@ -1,7 +1,7 @@
 // button widget with a gradient background
 
 import 'package:flutter/material.dart';
-import 'package:mortivate/utilities/constants.dart';
+import 'package:mindlift/utilities/constants.dart';
 
 class StyledElevatedButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;

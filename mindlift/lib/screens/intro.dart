@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/screens/personal.dart';
-import 'package:mortivate/utilities/constants.dart';
+import 'package:mindlift/screens/personal.dart';
+import 'package:mindlift/utilities/constants.dart';
 import '../widgets/intro/pages/animated_screen_slider.dart';
 import '../widgets/intro/widgets/widgets.dart';
 

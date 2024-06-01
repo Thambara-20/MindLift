@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:mortivate/widgets/menu_box_wrapper.dart';
-import 'package:mortivate/widgets/special_quote.dart';
-import 'package:mortivate/widgets/styled_button.dart';
+import 'package:mindlift/widgets/menu_box_wrapper.dart';
+import 'package:mindlift/widgets/special_quote.dart';
+import 'package:mindlift/widgets/styled_button.dart';
 
 class Menu {
   static void show(BuildContext context) {

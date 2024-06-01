@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/widgets/radio_button.dart';
+import 'package:mindlift/widgets/radio_button.dart';
 
 class GenderPage extends StatefulWidget {
   const GenderPage({Key? key}) : super(key: key);

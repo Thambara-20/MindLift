@@ -1,6 +1,6 @@
 // gender_page.dart
 import 'package:flutter/material.dart';
-import 'package:mortivate/widgets/selecter_button.dart';
+import 'package:mindlift/widgets/selecter_button.dart';
 
 class SituationPage extends StatefulWidget {
   const SituationPage({Key? key}) : super(key: key);

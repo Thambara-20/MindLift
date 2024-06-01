@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:mortivate/utilities/index.dart';
-import 'package:mortivate/widgets/gradient_text.dart';
-import 'package:mortivate/widgets/styled_button.dart';
+import 'package:mindlift/utilities/index.dart';
+import 'package:mindlift/widgets/gradient_text.dart';
+import 'package:mindlift/widgets/styled_button.dart';
 
 class Specialquote extends StatelessWidget {
   final String quote;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mortivate/widgets/gradient_text.dart';
+import 'package:mindlift/widgets/gradient_text.dart';
 
 class MenuBox extends StatelessWidget {
   final double width;
