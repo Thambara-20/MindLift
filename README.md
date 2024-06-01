@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Motivation Plus Application delivers daily inspiration through push notifications, goal tracking, and personalized content.
+The MindLift delivers daily inspiration through push notifications, goal tracking, and personalized content.
 
 ## Features
 
