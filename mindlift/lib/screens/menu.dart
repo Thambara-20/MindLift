@@ -49,8 +49,8 @@ class Menu {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: QuoteBodyContainer(
-                      quote: 'quote',
-                      author: 'author',
+                      quote: 'Doubt kills more dreams than failure ever will.',
+                      author: 'Suzy Kassem',
                       height: '50',
                     ),
                   ),
@@ -72,24 +72,24 @@ class Menu {
                     'Upgrade',
                     'Boost your mind',
                     'Level up',
-                    'Mortivation plus'
+                    'Mortivation Plus'
                   ], icons: [
                     Icons.arrow_outward,
                     Icons.mediation,
                     Icons.show_chart_outlined,
                     Icons.medical_information
                   ]),
-                  MenuBoxWrapper(topic: 'For Personal Growth', menuItems: [
-                    'Upgrade',
-                    'Boost your mind',
-                    'Level up',
-                    'Mortivation plus'
-                  ], icons: [
-                    Icons.arrow_outward,
-                    Icons.mediation,
-                    Icons.show_chart_outlined,
-                    Icons.medical_information
-                  ]),
+                  // MenuBoxWrapper(topic: 'For Personal Growth', menuItems: [
+                  //   'Upgrade',
+                  //   'Boost your mind',
+                  //   'Level up',
+                  //   'MindLift'
+                  // ], icons: [
+                  //   Icons.arrow_outward,
+                  //   Icons.mediation,
+                  //   Icons.show_chart_outlined,
+                  //   Icons.medical_information
+                  // ]),
                 ],
               ),
             ),

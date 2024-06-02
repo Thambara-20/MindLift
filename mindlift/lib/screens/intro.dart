@@ -6,7 +6,7 @@ import '../widgets/intro/widgets/widgets.dart';
 
 final List<SingleIntroScreen> pages = [
   const SingleIntroScreen(
-    title: 'Welcome to the \nMotivation Plus!',
+    title: 'Welcome to the \nMindLift!',
     description: 'Your daily source of inspiration and mental \nwell-being.',
     imageAsset: 'assets/meditate.png',
     mainCircleBgColor: Color.fromARGB(255, 10, 53, 88),
