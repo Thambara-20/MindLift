@@ -171,7 +171,7 @@ class QuoteBodyContainer extends StatelessWidget {
                   bottom: 2.0,
                 ),
                 child: GradientText(
-                    text: 'Quote of the day',
+                    text: 'Doubt kills more dreams than failure ever will.',
                     gradient: const LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
@@ -200,7 +200,7 @@ class QuoteBodyContainer extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(height == '100' ? 16.0 : 2.0),
                       child: Text(
-                        '"Quote of the day"',
+                        '- Suzy Kassem',
                         style: TextStyle(
                           fontSize: height == '100' ? 24 : 16,
                           color: Colors.white,
@@ -208,7 +208,7 @@ class QuoteBodyContainer extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(height == '100' ? 16.0 : 2.0),
+                      padding: EdgeInsets.all(height == '100' ? 18.0 : 4.0),
                       child: Text(
                         author,
                         style: TextStyle(

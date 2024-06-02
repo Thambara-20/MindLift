@@ -99,8 +99,8 @@ class MiddlePageList extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             if (index == 0) {
               return const Specialquote(
-                quote: 'Quote of the day',
-                author: 'Author',
+                quote: 'Doubt kills more dreams than failure ever will.',
+                author: 'Suzy Kassem',
               );
             } else {
               return QuoteContainer(quote: 'Quote $index', author: 'Author');
